@@ -32,9 +32,11 @@ let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
-  updateTotal();
   updateTaxAndCharge();
+  updateTotal();
   document.getElementById("total-Products").innerText = count;
+  
+  
 };
 
 const getInputValue = (id) => {
@@ -70,6 +72,7 @@ const updateTaxAndCharge = () => {
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
+    
   }
 };
 
